@@ -1,0 +1,652 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.container {
+    width: 1440px;
+    padding-right: 96px;
+    padding-left: 96px;
+    margin: auto;
+}
+
+
+
+/*---------------------------
+   Global
+  -------------------------*/
+h2{
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 48px;
+    color: #1E1E1E;
+    margin: 0;
+}
+
+h3{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1E1E1E;
+    margin: 0; 
+}
+
+p{
+        margin: 0;
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: rgba(30, 30, 30, 0.5);
+    
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 147px;
+    height: 51px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+
+/*---------------------------
+    Start Header 
+  -------------------------*/
+
+
+.landing-page {
+    position: relative;
+    background-color: #FFF;
+}
+
+.landing-page .header-area{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: 123px;
+    align-items: center;
+}
+
+.landing-page .header-area .logo{
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-family: 'Quella', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 39px;
+    color: #1E1E1E;
+}
+
+.landing-page .header-area .links-words{
+    position: absolute;
+    left: 150px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+
+.landing-page .header-area .links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.landing-page .header-area .links li {
+    display: inline-block;
+    margin-left: 30px;
+    color: #5d5d5d;
+    cursor: pointer;
+}
+
+.landing-page .header-area .link-icons i, span{
+    margin: 0 24px;
+    color: black;
+    
+}
+
+
+/*---------------------------
+    Start info
+  -------------------------*/
+
+
+.landing-page .info {
+    width: 1248px;
+    height: 512px;
+    float: left;
+    background-color: #C1DCDC;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-page .info .info-words{
+    width: 50%;
+    display: inline-block;
+    padding: 48px;
+}
+
+.landing-page .info h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 64px;
+    margin: 0;
+    color: black;
+}
+
+.landing-page .hand{
+    position: absolute;
+    left: 781px;
+    top: 18px;
+    bottom: 0;
+}
+
+.landing-page .arrow{
+    position: absolute;
+    left: 522px;
+    top: 359.19px;
+}
+
+.landing-page .arrow2{
+    position: absolute;
+    left: 1137.24px;
+    top: 13px;
+    transform: matrix(0.95, 0.31, -0.34, 0.94, 0, 0);
+}
+
+
+.landing-page .info .colorblock{
+    content: "";
+    position: absolute;
+    left: 726px;
+    top: 123px;
+    width: 450px;
+    height: 400px;
+    right: 0;
+    background: #1E1E1E;
+    border-radius: 200px 200px 0px 200px;
+}
+
+
+.landing-page .info .ffffff{
+    display: flex;
+    margin:36px 0;
+}
+
+.landing-page .info h3 {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0;
+}
+
+.landing-page .info p {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0;
+}
+
+.link-right {
+    border-right: solid black 1px;
+}
+.link-left{
+    padding-left: 48px;
+}
+.subtitle{
+    padding-right: 48px;
+}
+
+/* input */
+
+.underLineStyle {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  /*輸入框內的圖示屬性設定*/
+.inputWithin {
+    position: relative; 
+    display: inline-block;
+  }		
+  .inputWithin input{
+    width: 449px;
+    height: 64px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(30, 30, 30, 0.5);
+    padding: 18px;
+    }
+
+  .inputWithin .icon { /*左邊圖示*/
+    position: absolute;
+    display: flex;
+    right: 8px;
+    top: calc(50% - 0.5em);
+    background: #C1DCDC;
+    padding: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12px;
+  }
+  .inputWithin .btn { /*右邊圖示*/
+    position: absolute;
+    right: 3px;
+    top: calc(50% - 0.5em);
+  }		
+
+/*輸入框padding設定，用以保持文字與圖示的距離。*/
+.inputPaddingLeft {
+    padding-left: 36px; 
+    padding-top: 10px; 		
+    padding-bottom: 10px;
+  }
+  .inputPaddingRight {
+    padding-right: 66px;
+  }
+
+
+  .landing-page .image img {
+    max-width: 100%;
+}
+
+
+  .clearfix {
+    clear: both;
+  }
+
+
+/*---------------------------
+    Start info-Product
+  -------------------------*/
+
+  .landing-page .Product {
+    float: left;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 97px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-page .Product .Product-info{
+    width: 20%;
+    display: inline-block; 
+}
+
+.landing-page .Product p{
+    margin: 24px 0;
+}
+
+.landing-page .Product .Product-cards .card p{
+    margin: 0;
+}
+
+
+.landing-page .Product button{
+    flex-direction: row;
+    align-items: center;
+    width: 168px;
+    height: 51px;
+    background: #C1DCDC;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.landing-page .Product-cards{
+    display: flex;
+    float: right;
+}
+
+.landing-page .Product-cards .card:nth-child(2){
+    margin:0 48px;
+}
+
+
+/*---------------------------
+    Start About us
+  -------------------------*/
+  .landing-page .AboutUs {
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    clear: both;
+    height: 512px;
+}
+
+.landing-page .AboutUs .user-infos{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 76px;
+}
+
+.landing-page .AboutUs .user-box{
+    width: 96px;
+    height: 96px;
+    background-color: #C1DCDC;
+    display: inline-block;
+    border-radius: 100px;
+    position: relative;   
+    
+}
+
+.landing-page .AboutUs .info-content{
+    margin: 24px 0;
+}
+
+.landing-page .AboutUs .user-box .user{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+/*---------------------------
+    Start Categories
+  -------------------------*/
+  .landing-page .Categories {
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    
+}
+
+.landing-page .Categories .categorties-content{
+    width: 100%;
+    height: 841px;
+    background: #C1DCDC;
+    margin-top: 96px;
+    position: relative;
+}
+
+.content-product1,.content-product2,.content-product3{
+    width: 350px;
+    height: 512px;
+    border-radius: 12px;
+}
+
+.content-product img{
+    width: 100%;
+}
+
+.content-product1{
+    position: absolute;
+    top: -50px;
+    left: 96px;
+}
+
+.content-product2{
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.content-product2 button{
+    margin: 0 auto;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+
+.content-product3{
+    position: absolute;
+    top: -50px;
+    right: 96px;
+}
+
+
+/*---------------------------
+    Start Customers
+  -------------------------*/
+.customers{
+    padding-left: 96px;
+    padding-top: 96px;
+
+    background-color: #fff;
+    position: relative;
+    clear: both;
+    height: 800px;
+    display: flex;
+    overflow: hidden;
+}
+
+.customers .customers-say{
+    position: absolute;
+    width: 800px;
+    height: 330px;
+    left: 96px;
+    top: 240px;
+    background: #C1DCDC;
+    border-radius: 12px;
+}
+
+.customers .pppp{
+    padding: 48px;
+    left: 48px;
+    bottom: 101px;
+}
+
+.customers .dots{
+    position: absolute;
+    left: 50px;
+}
+
+.customers .customer1,
+.customers .customer2{
+    position: absolute;
+    bottom: 0;
+    left: 13px;
+}
+
+.customers .customers-say .star{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 48px;
+}
+
+.customers .customers-say .star h3{
+    margin-left: 8px;
+    padding-top: 4px;
+}
+
+.customers .customers-say2 .star{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 48px;
+}
+
+.customers .customers-say2 .star h3{
+    margin-left: 8px;
+    padding-top: 4px;
+}
+
+
+
+.customers-say2{
+    position: absolute;
+    width: 800px;
+    height: 330px;
+    left: 944px;
+    top: 240px;
+    background: #C1DCDC;
+    border-radius: 12px;
+}
+
+.customers .customer-info{
+    position: absolute;
+    left: 200px;
+}
+
+.customers .customer-subtitle{
+    display: flex;
+    width: 100%;
+}
+
+.customers .customer-subtitle .ch{ 
+    position: absolute;
+    right: 96px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.customers .customer-subtitle .ch li{ 
+    margin: 6px;
+}
+
+.customers .customer-subtitle .ch li:nth-child(1){
+    width: 48px;
+    height: 6px;
+    background: #C1DCDC;
+    border-radius: 12px;
+} 
+
+.customers .customer-subtitle .ch li:nth-child(2){
+    width: 12px;
+    height: 6px;
+    background: #D9D9D9;
+    border-radius: 12px;
+} 
+
+.customers .customer-subtitle .ch li:nth-child(3){
+    width: 12px;
+    height: 6px;
+    background: #D9D9D9;
+    border-radius: 12px;
+} 
+
+/*---------------------------
+    Start Customers
+  -------------------------*/
+  .customers{
+    padding-left: 96px;
+    padding-top: 96px;
+
+    background-color: #fff;
+    position: relative;
+    clear: both;
+    height: 800px;
+    display: flex;
+}
+
+/*---------------------------
+    Start Footer
+  -------------------------*/
+
+  footer{
+    width: 100%;
+    height: 400px;
+    background: #C1DCDC;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  footer p{
+    padding: 24px 0;
+  }
+
+  footer .footer-content li p{
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(30, 30, 30, 0.5);
+    
+  }
+
+
+
+
+  footer span{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(30, 30, 30, 0.5);
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 48px;
+
+  }
+
+  .footer__logo{
+    font-family: 'Quella';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    padding-top: 48px;
+  }
+
+  .footer__headline {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    padding-top: 48px;
+  }
+  
+  .footer__list {
+    font-family: 'Poppins';
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer__list.footer-bottom-log{
+    
+    width: 192px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .footer-content{
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+  }
+
