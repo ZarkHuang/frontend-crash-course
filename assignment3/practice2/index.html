@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color: black;
+    }
+
+    h2{
+        display: flex;
+        padding: 0 12px;
+      }
+
+    #left {
+      position: relative;
+      background-color: #cecece;
+      width: 50%;
+      float: left;
+      height: 800px;
+      text-align: center;
+      font-size: 15px;
+      color: black;
+      font-weight: bold;
+    }
+
+    #right {
+      position: relative;
+      width: 50%;
+      height: 800px;
+      text-align: center;
+      font-size: 15px;
+      color: black;
+      font-weight: bold;
+      background-color: lightcyan;
+      float: left;
+    }
+
+    .part1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .suggest{
+        background-color: #fff;
+        padding: 10px 20px;
+        border: 1px solid;
+        margin: 20px;
+    }
+
+    button{
+        padding: 9px 20px;
+        border: 1px solid;
+        cursor: pointer;
+    }
+
+    .part2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .Age{
+        padding: 2px 20px;
+        border-bottom: 1px solid;
+        margin: 28px;
+    }
+
+    input{
+        width: 240px;
+        height: 36px;
+        padding: 0 10px;
+        margin: 20px;
+        border: 1px solid;
+    }
+
+  </style>
+</head>
+
+
+  <div id="left">
+    <h2><a href="../../index.html">Back</a></h2>
+    <div class="part1">
+        <h1>Suggestion</h1>
+      <div class="suggest"></div>
+      <button onclick="getContent()">確認</button>
+    </div>
+  </div>
+
+  <div id="right">
+    <div class="part2">
+        <h1>What's your age?</h1>
+        <input id="userName" 
+        type="text" 
+        name="username" 
+        placeholder="What's Your Name in English?"
+        onkeyup="value=value.replace(/[^\a-\z\A-\Z]/g,'')" 
+        onpaste="value=value.replace(/[^\a-\z\A-\Z]/g,'')" 
+        oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z]/g,'')"
+        >
+        <button onclick="getAge()">確認</button>
+        <div class="Age">I guess</div>
+      </div>
+  </div>
+
+
+    
+    
+
+    <script>
+
+        const getContent = () =>{
+            fetch('https://www.boredapi.com/api/activity')
+            .then(res => res.json())
+            .then(data => {
+                document.querySelector('.suggest').innerHTML = data.activity;
+            }) 
+            
+        }
+        getContent();
+
+
+        const getAge = () =>{
+            const userName = document.getElementById("userName").value;
+            if(userName){
+            fetch(`https://api.agify.io/?name=${userName}`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                document.querySelector('.Age').innerHTML = `I guess ${data.age} year's old.`    
+            }) 
+            }else{
+                document.querySelector('.Age').innerHTML = "Please entering your English name..."   
+            }
+            }
+
+            getAge();
+
+
+            function userName (e,value){
+                console.log(23)
+            }
+
+    </script>
+
+
+</body>
+</html>

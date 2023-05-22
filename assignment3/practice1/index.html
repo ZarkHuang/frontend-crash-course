@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: black;
+      }
+
+      button {
+        padding: 0px 20px;
+        border-radius: 10px;
+      }
+
+      p {
+        padding: 0 32px;
+        font-size: 24px;
+        text-align: center;
+        display: inline-block;
+        margin: auto;
+      }
+
+      h1 {
+        top: 10%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      h2{
+        display: flex;
+        padding: 0 12px;
+      }
+
+      #left {
+        position: relative;
+        background-color: #cecece;
+        width: 50%;
+        float: left;
+        height: 800px;
+        text-align: center;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+      }
+
+      #right {
+        position: relative;
+        width: 50%;
+        height: 800px;
+        text-align: center;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        background-color: lightcyan;
+        float: left;
+      }
+
+      .counter {
+        position: absolute;
+        text-align: left;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
+
+
+      #right h1 {
+        top: 10%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      /* To do List style */
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .List {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .toDoList {
+        width: 350px;
+        padding: 20px;
+        text-align: left;
+        margin: auto;
+      }
+
+      .toDoList li {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px 60px;
+        margin: 10px 0px;
+        position: relative;
+      }
+
+      .toDoList li button {
+        position: absolute;
+        right: 10px;
+      }
+
+      #inputValue,
+      .addBtn {
+        line-height: 24px;
+      }
+      #inputValue {
+        width: 200px;
+        padding: 5px 10px;
+        border: 1px solid;
+      }
+      .addBtn {
+        padding: 5px 10px;
+      }
+
+      .deleteStyle {
+        text-decoration: line-through;
+        color: gray;
+        background-color: #80808034;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="left">
+    <h2><a href="../../index.html">Back</a></h2>
+      <h1>Counter</h1>
+      <div class="counter">
+        <button onclick="increase()" id="increase">+</button>
+        <p class="num">0</p>
+        <button onclick="reduce()" id="reduce">-</button>
+        <button onclick="reset()" style="margin-left: 20px" id="reset">
+          reset
+        </button>
+      </div>
+    </div>
+
+    <div id="right">
+      <h1>List</h1>
+      <div class="List">
+        <div class="container">
+          <input id="inputValue" type="text" placeholder="請輸入待辦事項..." />
+          <button class="addBtn">ADD TO LIST</button>
+          <ol class="toDoList"></ol>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      {
+        //counter
+        let i = 0;
+        function increase() {
+          document.querySelector(".num").innerHTML = i + 1;
+          i++;
+        }
+
+        function reduce() {
+          if (i == 0) {
+            return;
+          }
+          document.querySelector(".num").innerHTML = i - 1;
+          i--;
+        }
+
+        function reset() {
+          if (i !== 0) {
+            i = 0;
+          }
+          document.querySelector(".num").innerHTML = i;
+        }
+      }
+
+      //////////////////// To do list
+      {
+        const addBtn = document.querySelector(".addBtn");
+        const toDoList = document.querySelector(".toDoList");
+        const input = document.getElementById("inputValue");
+
+        const handleAddToList = () => {
+          if (input.value) {
+            const li = document.createElement("li");
+            li.innerHTML = `${input.value}<button class="deleteBtn" style="margin-right:80px;">Delete</button><button class="removebtn">Done</button>`;
+            toDoList.append(li); 
+            input.value = "";
+
+            //刪除button
+            const deleteBtn = li.querySelector(".deleteBtn");
+            deleteBtn.addEventListener("click", () => {
+            li.remove();
+            });
+
+            const removebtn = li.querySelector(".removebtn");
+            removebtn.addEventListener("click", () => {
+            li.classList.toggle("deleteStyle");
+            });
+          }
+        };
+
+        addBtn.addEventListener("click", handleAddToList);
+      }
+    </script>
+  </body>
+</html>
